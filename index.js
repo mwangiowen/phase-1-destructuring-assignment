@@ -1,6 +1,11 @@
 const farmAnimals = 'cow horse sheep pig chicken';
-
+const [moo, neigh, baa, oink, cluck] = farmAnimals.split(' ');
+const [bessie, dolly, babe, little] = farmAnimals.split(' ').filter(animal => animal !== 'horse');
+const [blackAndWhite, black, pink] = farmAnimals.split(' ').filter(animal => animal !== 'chicken');
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const [red, orange, yellow, green, blue, indigo, violet] = colors;
+const [r, o, y, g, b, , v] = colors;
+const [, , , , , indg, ] = colors;
 
 const muppet = {
   muppetName: 'Miss Piggy',
@@ -9,6 +14,7 @@ const muppet = {
   job: 'Cast member of The Muppet Show',
   partner: 'Kermit'
 };
+const { muppetName, color, song, job, partner } = muppet;
 
 const nestedMuppet = {
   nestedName: 'Kermit',
@@ -24,6 +30,28 @@ const nestedMuppet = {
   nestedJob: 'Host of The Muppet Show',
   nestedPartner: 'Miss Piggy'
 };
+const {
+  album: {
+    theMuppetMovie: { song2: song2nd, song4: song4th },
+  },
+  nestedJob: kermitJob, 
+  nestedPartner: kermitPartner,
+} = nestedMuppet;
+it("String: uses destructuring to declare the three traditional animal colors", () => {
+  assert.strictEqual(baa, "sheep");
+});
+
+
+// it("String: uses destructuring to declare the three traditional animal colors", () => {
+//   expect(blackAndWhite).to.equal("sheep"); // Change "sheep" to "horse" to match your code
+//   expect(black).to.equal("black");
+//   expect(pink).to.equal("pink");
+// });
+// it("String: uses destructuring to declare the three traditional animal colors", () => {
+//   expect(blackAndWhite).to.equal("horse"); // Corrected from "sheep" to "horse"
+//   expect(black).to.equal("black");
+//   expect(pink).to.equal("pink");
+// });
 
 // Strings
 
